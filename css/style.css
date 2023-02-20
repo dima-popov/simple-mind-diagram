@@ -1,0 +1,575 @@
+body {
+  background-color: lightgrey;
+}
+
+.workspace_wrap {
+  overflow: auto;
+  width: 98vw;
+  height: 95vh;
+}
+
+.zoom_wrap {
+  overflow: hidden;
+}
+
+.workspace {
+  background-color: white;
+  width: 300vw;
+  height: 300vh;
+  transform-origin: top left;
+}
+
+.workspace rect {
+  stroke-width: 4px;
+  border-radius: 10px;
+  height: 40px;
+  cursor: pointer;
+  x: 2px;
+  y: 4px;
+}
+
+.input-wrap {
+  vertical-align: middle;
+}
+
+.workspace foreignObject input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  height: 40px;
+  font-size: 12px;
+  display: inline-block;
+  text-align: center;
+}
+
+.workspace foreignObject input:read-only {
+  cursor: pointer;
+}
+
+.block_title {
+  display: inline-block;
+  background-color: white;
+  padding: 2px;
+}
+
+.icons_block {
+  background-color: white;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.icon_common {
+  width: 16px;
+  height: 16px;
+  padding: 3px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.icon_common:hover {
+  background-color: gray;
+}
+
+.btn-del {
+  width: 12px;
+  height: 12px;
+  padding: 3px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.btn-del:hover {
+  background-color: lightgray;
+}
+
+.noteActive {
+  background-color: lightgray;
+}
+
+.notepoint_wrap {
+  cursor: pointer;
+  border-radius: 100%;
+  padding: 2px 4px;
+  text-align: center;
+}
+
+.notepoint_wrap:hover {
+  background-color: lightgray;
+}
+
+.note_sign {
+  cursor: pointer;
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 100%;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.note_sign:hover {
+  background-color: lightgray;
+}
+
+.btn-plus {
+  width: 12px;
+  height: 12px;
+  padding: 3px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.btn-plus:hover {
+  background-color: lightgray;
+}
+
+.btn-arrow {
+  width: 12px;
+  height: 12px;
+  padding: 3px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.btn-arrow:hover {
+  background-color: lightgray;
+}
+
+.btn-arrow[hide_state="true"] {
+  background-color: gray;
+}
+
+.btn-line {
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: white;
+}
+
+.btn-line:hover {
+  background-color: lightgray;
+}
+
+.wire {
+  cursor: pointer;
+}
+
+.wirein {
+  pointer-events: none;
+}
+
+.cross_wire {
+  cursor: pointer;
+}
+
+.cross_wirein {
+  pointer-events: none;
+}
+
+.rect_wrap[level="0"] {
+  fill: #8cd0ff;
+  stroke: #54a5b6;
+}
+
+.rect_wrap[level="1"] {
+  fill: #c5ee9a;
+  stroke: #62a81c;
+}
+
+.rect_wrap[level="2"] {
+  fill: #ecea99;
+  stroke: #a4a11f;
+}
+
+.rect_wrap[level="3"] {
+  fill: #fffad7;
+  stroke: #eace00;
+}
+
+.rect_wrap[level="4"] {
+  fill: #fff3d6;
+  stroke: #ffd982;
+}
+
+.rect_wrap[level="5"] {
+  fill: #fff3d6;
+  stroke: #ffd982;
+}
+
+.rect_wrap[level="6"] {
+  fill: #fff3d6;
+  stroke: #ffd982;
+}
+
+.rect_wrap[level="7"] {
+  fill: #fff3d6;
+  stroke: #ffd982;
+}
+
+.rect_wrap[level="8"] {
+  fill: #fff3d6;
+  stroke: #ffd982;
+}
+
+.rect_wrap {
+  fill: #fff3d6;
+  stroke: #ffd982;
+}
+
+.wirein[level="1"] {
+  stroke: #62a81c;
+}
+
+.wirein[level="2"] {
+  stroke: #a4a11f;
+}
+
+.wirein[level="3"] {
+  stroke: #eace00;
+}
+
+.wirein[level="4"] {
+  stroke: #ffd982;
+}
+
+.wirein[level="5"] {
+  stroke: #ffd982;
+}
+
+.wirein[level="6"] {
+  stroke: #ffd982;
+}
+
+.wirein[level="7"] {
+  stroke: #ffd982;
+}
+
+.wirein[level="8"] {
+  stroke: #ffd982;
+}
+.wirein {
+  stroke: #ffd982;
+}
+
+.rect_shine {
+  stroke: blue !important;
+}
+
+#line_info {
+  width: 20px;
+  height: 10px;
+  background-color: gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.canvas_menu {
+  padding: 2px 10px;
+}
+
+.rect_image {
+  display: inline-block;
+  width: 16px;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: -28px;
+  margin-top: 10px;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.rect_icon {
+  vertical-align: middle;
+  height: 25px;
+}
+
+.theme_wrap {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.rect_wrap[theme="1"] rect {
+  rx: 0;
+  ry: 0;
+}
+.rect_wrap[theme="2"] rect {
+  stroke-dasharray: 5, 5;
+}
+
+.rect_wrap[theme="3"] rect {
+  rx: 150px;
+  ry: 150px;
+  stroke: none;
+}
+
+.btn-line-move {
+  cursor: pointer;
+}
+
+.btn-new-line {
+  cursor: pointer;
+}
+
+.btn-cross-line {
+  cursor: pointer;
+}
+
+.undoBlock {
+  display: inline-block;
+}
+
+.prevBtn.diactivated {
+  background-color: gray;
+}
+
+.nextBtn.diactivated {
+  background-color: gray;
+}
+
+.contextmenu_wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border: 2px lightgray solid;
+  display: none;
+  z-index: 1000;
+}
+
+.custom_contextmenu {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.custom_contextmenu li {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  display: block;
+}
+
+.custom_contextmenu li:hover {
+  padding: 6px;
+  background-color: lightgray;
+}
+
+.contextmenu_close {
+  float: right;
+  cursor: pointer;
+  padding: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contextmenu_close:hover {
+  background-color: lightgray;
+}
+
+.line_contextmenu_wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border: 2px lightgray solid;
+  display: none;
+  z-index: 1000;
+}
+
+.line_custom_contextmenu {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.line_custom_contextmenu li {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  display: block;
+}
+
+.line_custom_contextmenu li:hover {
+  padding: 6px;
+  background-color: lightgray;
+}
+
+.line_contextmenu_close {
+  float: right;
+  cursor: pointer;
+  padding: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.line_contextmenu_close:hover {
+  background-color: lightgray;
+}
+
+.cross_contextmenu_wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border: 2px lightgray solid;
+  display: none;
+  z-index: 1000;
+}
+
+.cross_custom_contextmenu {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.cross_custom_contextmenu li {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  display: block;
+}
+
+.cross_custom_contextmenu li:hover {
+  padding: 6px;
+  background-color: lightgray;
+}
+
+.cross_contextmenu_close {
+  float: right;
+  cursor: pointer;
+  padding: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cross_contextmenu_close:hover {
+  background-color: lightgray;
+}
+
+.note_contextmenu_wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border: 2px lightgray solid;
+  display: none;
+  z-index: 1000;
+}
+
+.note_custom_contextmenu {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.note_custom_contextmenu li {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  display: block;
+}
+
+.note_custom_contextmenu li:hover {
+  padding: 6px;
+  background-color: lightgray;
+}
+
+.note_contextmenu_close {
+  float: right;
+  cursor: pointer;
+  padding: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.note_contextmenu_close:hover {
+  background-color: lightgray;
+}
+
+.main_contextmenu_wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border: 2px lightgray solid;
+  display: none;
+  z-index: 1000;
+}
+
+.main_custom_contextmenu {
+  list-style-type: none;
+  padding: 10px;
+}
+
+.main_custom_contextmenu li {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  display: block;
+}
+
+.main_custom_contextmenu li:hover {
+  padding: 6px;
+  background-color: lightgray;
+}
+
+.main_contextmenu_close {
+  float: right;
+  cursor: pointer;
+  padding: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main_contextmenu_close:hover {
+  background-color: lightgray;
+}
+
+.mindmap_modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  border: 1px lightgray solid;
+  box-shadow: 0 0 10px gray;
+  z-index: 1000;
+  margin: auto;
+  overflow: hidden;
+  padding: 6px;
+  display: none;
+}
+
+.mindmap_modal_close {
+  float: right;
+}
+
+.mindmap_modal_save {
+  float: right;
+}
+
+.note_text {
+  width: 98%;
+  height: 200px;
+}

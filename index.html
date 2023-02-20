@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Simple mind map</title>
+  <script src="js/d3.v6.min.js"></script>
+  <script src="js/jquery-3.5.1.min.js"></script>
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<style></style>
+
+<body>
+  <div class="contextmenu_wrap">
+    <div class="contextmenu_close" onclick="$('.contextmenu_wrap').hide();">
+      X
+    </div>
+    <ul class="custom_contextmenu">
+      <li onclick="mainWrapObj.deleteSelected(event);">Delete</li>
+      <li onclick="mainWrapObj.childToSelected(event);">Add child</li>
+      <li onclick="mainWrapObj.rollSelected(event);">RollUp/Unroll</li>
+    </ul>
+  </div>
+
+  <div class="line_contextmenu_wrap">
+    <div class="line_contextmenu_close" onclick="$('.line_contextmenu_wrap').hide();">
+      X
+    </div>
+    <ul class="line_custom_contextmenu">
+      <li onclick="mainWrapObj.removeWire($(mainWrapObj.selectedLine).attr('wire_id'))">
+        Delete
+      </li>
+      <li onclick="mainWrapObj.defaultBend(mainWrapObj.selectedLine);">
+        Default bend
+      </li>
+    </ul>
+  </div>
+
+  <div class="cross_contextmenu_wrap">
+    <div class="cross_contextmenu_close" onclick="$('.cross_contextmenu_wrap').hide();">
+      X
+    </div>
+    <ul class="cross_custom_contextmenu">
+      <li onclick="mainWrapObj.removeCrossWire($(mainWrapObj.selectedCrossLine).attr('wire_id'))">
+        Delete
+      </li>
+      <li onclick="mainWrapObj.defaultCrossLineBend(mainWrapObj.selectedCrossLine);">
+        Default bend
+      </li>
+    </ul>
+  </div>
+
+  <div class="note_contextmenu_wrap">
+    <div class="note_contextmenu_close" onclick="$('.note_contextmenu_wrap').hide();">
+      X
+    </div>
+    <ul class="note_custom_contextmenu">
+      <li onclick="mainWrapObj.removeNotePoint()">Delete</li>
+      <li onclick="mainWrapObj.modalShow();$('.note_contextmenu_wrap').hide();">
+        Add note
+      </li>
+    </ul>
+  </div>
+
+  <div class="main_contextmenu_wrap">
+    <div class="main_contextmenu_close" onclick="$('.main_contextmenu_wrap').hide();">
+      X
+    </div>
+    <ul class="main_custom_contextmenu">
+      <li onclick="mainWrapObj.addBlock(event);">Add new</li>
+      <li onclick="mainWrapObj.canvasToCenter();">To Center</li>
+      <li onclick="mainWrapObj.addNotePoint(event);">Add note</li>
+    </ul>
+  </div>
+
+  <div class="canvas_menu">
+    <div class="block_title">Simple mind map</div>
+    <div class="theme_wrap">
+      <span>Theme</span>
+      <select class="rect_theme">
+        <option>0</option>
+        <option>1</option>
+        <option>3</option>
+      </select>
+    </div>
+    <span> Zoom:</span>
+    <input type="number" id="canvas_zoom" min="20" max="200" value="100" onchange="mainWrapObj.zoomCanvas();" />
+    <span>Use the right mouse button to add a node.</span>
+    <div style="float: right">
+      <div class="undoBlock">
+        <button onclick="mainWrapObj.prevState();" class="prevBtn diactivated">
+          Prev</button><button onclick="mainWrapObj.nextState();" class="nextBtn diactivated">
+          Next
+        </button>
+      </div>
+
+      <div class="icons_block">
+        <span class="icon_common" src="">none</span>
+        <img src="img/icons/star.svg" class="icon_common" />
+        <img src="img/icons/pointer.svg" class="icon_common" />
+        <img src="img/icons/user.svg" class="icon_common" />
+        <img src="img/icons/car.svg" class="icon_common" />
+        <img src="img/icons/time.svg" class="icon_common" />
+        <img src="img/icons/globe.svg" class="icon_common" />
+        <img src="img/icons/pencil.svg" class="icon_common" />
+        <img src="img/icons/lock.svg" class="icon_common" />
+        <img src="img/icons/like.svg" class="icon_common" />
+        <img src="img/icons/key.svg" class="icon_common" />
+      </div>
+    </div>
+  </div>
+
+  <div class="mindmap_modal">
+    <div class="modal_inner_wrap">
+      <button class="mindmap_modal_close" onclick="$('.mindmap_modal').fadeOut(200)">
+        X
+      </button>
+      <br /><br />
+      <textarea class="note_text"></textarea>
+      <br />
+      <br />
+      <button class="mindmap_modal_save" onclick="mainWrapObj.saveNote()">
+        Save
+      </button>
+    </div>
+  </div>
+
+  <div class="workspace_wrap">
+    <div class="zoom_wrap">
+      <svg class="workspace"></svg>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/simplemind.js"></script>
+</body>
+
+</html>
